@@ -1,0 +1,7 @@
+{
+  "name": "MovilidadVerdeUCV",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
