@@ -1,0 +1,23 @@
+.login-content {
+  --background: #ffffff;
+  height: 100%;
+}
+
+.login-center{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(180deg,#eaf7ee,#f5fff6);
+}
+
+.login-center h1{
+  font-size: 36px;
+  color: #2f8a47;
+  margin: 0;
+}
+.login-center p{
+  color: #666;
+}
