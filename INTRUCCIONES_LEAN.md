@@ -73,7 +73,6 @@ src/
 
 git add .
 git commit -m " ACA PONGAN UN COMENTARIO CUALQUIERA "
-git branch -M main   # por si estás en master
-git push -u origin main --force
+git push
 
 
