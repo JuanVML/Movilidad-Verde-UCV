@@ -1,0 +1,95 @@
+.registro-page {
+  --background: #f2f6f5;
+}
+
+.registro-header {
+  background: #106a6f;
+  color: white;
+  padding: 40px 20px 20px;
+  text-align: center;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+
+.registro-logo {
+  width: 70px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.brand {
+  font-size: 20px;
+  margin: 0;
+}
+
+.registro-card {
+  margin: -20px auto 0;
+  padding: 20px;
+  max-width: 360px;
+  background: #f2f6f5;
+  border-radius: 20px;
+}
+
+.card-title {
+  color: #106a6f;
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.registro-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.registro-form input[type="text"],
+.registro-form input[type="email"],
+.registro-form input[type="password"] {
+  padding: 12px;
+  border: none;
+  border-radius: 20px;
+  background: #fff;
+  font-size: 14px;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.foto-upload {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  border-radius: 12px;
+  padding: 10px;
+  flex: 1;
+  text-align: center;
+}
+
+.foto-upload input[type="file"] {
+  display: none;
+}
+
+.upload-text {
+  color: #6a5acd;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.submit-btn {
+  background: #106a6f;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  opacity: 0.9;
+}

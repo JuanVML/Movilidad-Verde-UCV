@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { IonPage, IonContent } from "@ionic/react";
+import { IonPage, IonContent, IonRouterLink } from "@ionic/react";
 import "./Login.css";
 
 const Login: React.FC = () => {
@@ -18,18 +18,17 @@ const Login: React.FC = () => {
         <div className="bg-leaves" aria-hidden="true"></div>
 
         {/* Header con logo e icono ambiental */}
-<header className="login-header">
-  <h1 className="brand">UCV Green Mobility</h1>
+        <header className="login-header">
+          <h1 className="brand">UCV Green Mobility</h1>
 
-  <img
-    src="/assets/logo.png"
-    alt="UCV Green Mobility"
-    className="login-logo"
-  />
+          <img
+            src="/assets/logo.png"
+            alt="UCV Green Mobility"
+            className="login-logo"
+          />
 
-  <p className="subtitle">Movilidad sostenible para todos</p>
-</header>
-
+          <p className="subtitle">Movilidad sostenible para todos</p>
+        </header>
 
         {/* Card de Login */}
         <main className="login-card">
@@ -66,11 +65,12 @@ const Login: React.FC = () => {
                 className="social-icon"
               />
             </button>
-          
           </div>
           <p className="signup">
             ¿No tienes una cuenta?{" "}
-            <span className="signup-link">Regístrate aquí</span>
+            <IonRouterLink className="signup-link" routerLink="/registro">
+              Regístrate aquí
+            </IonRouterLink>
           </p>
         </main>
 
