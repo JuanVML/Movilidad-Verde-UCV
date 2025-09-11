@@ -76,3 +76,9 @@ git commit -m " ACA PONGAN UN COMENTARIO CUALQUIERA "
 git push
 
 
+-----------------------------------------------------
+Instalacion para mapas
+npx expo install react-native-maps
+npm install @react-navigation/native @react-navigation/stack
+npx expo install react-native-screens react-native-safe-area-context
+npx expo install expo-location
