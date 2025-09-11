@@ -1,117 +1,238 @@
-/* Fondo general */
+/* Fondo general con hojas suaves */
 .login-page {
-  --background: #f0f5f3;
-  display: flex;
-  flex-direction: column;
+  --background: #eaf7ee;
+  background: linear-gradient(180deg, #eaf7ee 0%, #f5fff6 100%);
+  min-height: 100vh;
+  position: relative;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
 }
 
-/* Header con logo */
+/* Fondo decorativo ambiental */
+.bg-leaves {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    url('https://svgshare.com/i/15rA.svg'),
+    url('https://svgshare.com/i/15rA.svg');
+  background-repeat: no-repeat, no-repeat;
+  background-size: 120px, 80px;
+  background-position: left top, right bottom;
+  opacity: 0.12;
+}
+
+/* Header con logo y eco-icon */
 .login-header {
   background: #0B6A75;
-  padding: 90px 20px 20px;
+  padding: 100px 20px 70px; /* menos padding superior */
   border-bottom-left-radius: 40px;
   border-bottom-right-radius: 40px;
   text-align: center;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 8px 24px rgba(11,106,117,0.08);
+  animation: fadeInDown 0.8s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px; /* espacio entre título, logo y subtítulo */
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-40px);}
+  to { opacity: 1; transform: translateY(0);}
 }
 
 .login-logo {
-  width: 80px;
+  width: 150px;
   height: auto;
-  margin-bottom: 10px;
+  filter: drop-shadow(0 2px 8px #0B6A7555);
+}
+
+.eco-icon {
+  font-size: 32px;
+  margin-bottom: 6px;
+  animation: ecoBounce 1.2s infinite alternate;
+}
+@keyframes ecoBounce {
+  to { transform: translateY(-6px);}
 }
 
 .brand {
   color: white;
-  font-size: 20px;
+  font-size: 26px;
   font-weight: bold;
+  margin-bottom: 2px;
+  letter-spacing: 0.5px;
+}
+
+.subtitle {
+  color: white;
+  font-size: 23px;
+  font-weight: bold;
+  margin-bottom: 2px;
+  letter-spacing: 0.5px;
 }
 
 /* Card central */
 .login-card {
   background: #ecf2f1;
-  margin: 20px;
-  padding: 30px 20px;
-  border-radius: 20px;
-  text-align: center;
+  margin: -50px 18px 24px 18px;
+  border-radius: 22px;
+  padding: 32px 22px 24px 22px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.06);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  animation: fadeInUp 1s;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px);}
+  to { opacity: 1; transform: translateY(0);}
 }
 
 .card-title {
   color: #0c6664;
-  font-size: 22px;
-  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: 700;
+  margin: 6px 0 24px 0;
+  align-self: flex-start;
 }
 
-/* Formulario */
 .login-form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 16px;
+  width: 100%;
 }
 
 .input {
-  padding: 12px;
-  border-radius: 25px;
-  border: 1px solid #ccc;
-  outline: none;
+  height: 46px;
+  border-radius: 23px;
+  border: none;
+  padding: 0 18px;
   font-size: 16px;
+  background: #ffffff;
+  box-shadow: 0 1px 4px rgba(11,106,117,0.07);
+  outline: none;
+  box-sizing: border-box;
+  transition: box-shadow 0.2s;
+}
+.input:focus {
+  box-shadow: 0 2px 8px #0B6A7533;
 }
 
 .submit-btn {
-  background: #0c6664;
-  color: white;
-  padding: 12px;
-  border-radius: 25px;
+  margin-top: 8px;
+  height: 46px;
+  border-radius: 16px;
+  background: linear-gradient(90deg, #0B6A75 60%, #1ecb7b 100%);
+  color: #fff;
   border: none;
-  font-size: 16px;
+  font-size: 18px;
+  font-weight: 600;
   cursor: pointer;
+  width: 100%;
+  box-shadow: 0 2px 8px #0B6A7533;
+  transition: background 0.2s;
 }
-
 .submit-btn:hover {
-  background: #0a4f4d;
+  background: linear-gradient(90deg, #1ecb7b 0%, #0B6A75 100%);
 }
 
 /* Divider */
 .divider {
   display: flex;
   align-items: center;
-  margin: 20px 0;
-  color: #999;
+  margin: 24px 0 16px;
+  color: #9aa7a0;
   font-size: 14px;
+  position: relative;
+  text-align: center;
+  width: 100%;
 }
-
 .divider::before,
 .divider::after {
   content: "";
+  height: 1px;
+  background: #d7ded9;
   flex: 1;
-  border-bottom: 1px solid #ccc;
-  margin: 0 10px;
+}
+.divider span {
+  padding: 0 12px;
+  background: transparent;
 }
 
 /* Social buttons */
 .socials {
   display: flex;
   justify-content: center;
-  gap: 15px;
-  margin-bottom: 20px;
+  gap: 16px;
+  margin-top: 6px;
 }
-
 .social-box {
-  width: 45px;
-  height: 45px;
-  border-radius: 10px;
-  background: white;
-  border: 1px solid #ddd;
+  width: 56px;
+  height: 44px;
+  background: #ffffff;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.03);
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: box-shadow 0.2s;
+}
+.social-box:hover {
+  box-shadow: 0 4px 12px #1ecb7b33;
+}
+.social-icon {
+  width: 40px;   /* antes 28px */
+  height: 40px;  /* antes 28px */
+  object-fit: contain;
 }
 
-/* Footer */
-.signup {
-  font-size: 14px;
-  color: #555;
-}
 
-.signup-link {
+/* Footer ambiental */
+.login-footer {
+  text-align: center;
+  margin-top: 24px;
   color: #0c6664;
-  font-weight: bold;
+  font-size: 14px;
+  opacity: 0.8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  z-index: 2;
+  position: relative;
+}
+
+.footer-leaf {
+  font-size: 22px;
+  margin-bottom: 2px;
+  animation: ecoBounce 1.2s infinite alternate;
+}
+
+/* Footer link */
+.signup {
+  text-align: center;
+  margin-top: 18px;
+  color: #8c9d93;
+  font-size: 15px;
+}
+.signup-link {
+  color: #1ecb7b;
+  font-weight: 600;
   cursor: pointer;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+.signup-link:hover {
+  color: #0B6A75;
 }

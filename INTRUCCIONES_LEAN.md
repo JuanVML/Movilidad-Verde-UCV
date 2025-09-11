@@ -77,7 +77,11 @@ git push
 
 
 -----------------------------------------------------
-Instalacion para mapas
+Instalaciones:
+npm install react-router-dom@6
+
+
+para mapas
 npx expo install react-native-maps
 npm install @react-navigation/native @react-navigation/stack
 npx expo install react-native-screens react-native-safe-area-context

@@ -3,70 +3,84 @@ import { IonPage, IonContent } from "@ionic/react";
 import "./Login.css";
 
 const Login: React.FC = () => {
-  const [email, setEmail] = useState("");
+  const [dni, setDni] = useState("");
   const [password, setPassword] = useState("");
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    alert(`Login con: ${email}`);
+    alert(`Bienvenido, DNI: ${dni}`);
   };
 
   return (
     <IonPage>
       <IonContent className="login-page" fullscreen>
-        {/* Header con logo */}
-        <header className="login-header">
-         <img
-  src="/assets/logo.png"
-  alt="UCV Green Mobility"
-  className="login-logo"
-/>
-          <h1 className="brand">UCV Green Mobility</h1>
-        </header>
+        {/* Fondo decorativo */}
+        <div className="bg-leaves" aria-hidden="true"></div>
+
+        {/* Header con logo e icono ambiental */}
+<header className="login-header">
+  <h1 className="brand">UCV Green Mobility</h1>
+
+  <img
+    src="/assets/logo.png"
+    alt="UCV Green Mobility"
+    className="login-logo"
+  />
+
+  <p className="subtitle">Movilidad sostenible para todos</p>
+</header>
+
 
         {/* Card de Login */}
         <main className="login-card">
-          <h2 className="card-title">Login</h2>
-
+          <h2 className="card-title">Inicia sesión</h2>
           <form className="login-form" onSubmit={handleLogin}>
             <input
               className="input"
-              type="DNI"
+              type="text"
               placeholder="DNI"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              value={dni}
+              onChange={(e) => setDni(e.target.value)}
               required
             />
-
             <input
               className="input"
               type="password"
-              placeholder="Password"
+              placeholder="Contraseña"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
             />
-
             <button className="submit-btn" type="submit">
-              Login
+              Acceder
             </button>
           </form>
 
-          {/* Divider */}
-          {/*<div className="divider">
-            <span>Or login with</span>
+          <div className="divider">
+            <span>O ingresa con</span>
           </div>
-
-          {/* Social buttons */}
-          {/* <div className="socials">
-            <button className="social-box" aria-label="social-1" />
-            <button className="social-box" aria-label="social-2" />
-          </div>*/}
-
+          <div className="socials">
+            <button className="social-box" aria-label="Google">
+              <img
+                src="/assets/Escudo-ucv.png"
+                className="social-icon"
+              />
+            </button>
+          
+          </div>
           <p className="signup">
-            No tienes una cuenta ? <span className="signup-link">Registrate Aqui</span>
+            ¿No tienes una cuenta?{" "}
+            <span className="signup-link">Regístrate aquí</span>
           </p>
         </main>
+
+        {/* Footer ambiental */}
+        <footer className="login-footer">
+          <span className="footer-leaf" role="img" aria-label="leaf">
+            🍃
+          </span>
+          <span>Movilidad Verde UCV &copy; 2025</span>
+        </footer>
       </IonContent>
     </IonPage>
   );
